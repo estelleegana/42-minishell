@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/06 16:48:20 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:00:51 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdio.h>
 # include "libft/incl/libft.h"
+
+# define PROMPT "minishell >"
 
 typedef struct s_parsing
 {
@@ -34,8 +36,16 @@ typedef struct s_initialestruct
 	t_parsing	p;
 }				t_initialestruct;
 
-//noyau
+//aaa : NOYAU (main, lancement de processus, etc.)
+int					ft_minishell(void);
+
+//e : EXECUTION
+int	ft_exit(void);
+
+//p : PARSING
+int	ft_parsing(void);
+
+//u : UTILITAIRES
 t_initialestruct	*s(void);
-int					main_process(void);
 
 #endif

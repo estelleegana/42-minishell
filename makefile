@@ -7,9 +7,12 @@ DFLAGS = -g3
 CFLAGS = -Wall -Werror -Wextra
 
 #fichiers sources (categorie_nomdefonction) et objets
-SRCS = main.c \
-	main_s.c \
-	main_process.c \
+SRCS = aaa_main.c \
+	aaa_s.c \
+	aaa_minishell.c \
+	e_exec.c \
+	e_exit.c \
+	p_parsing.c \
 
 OBJS = $(SRCS:.c=.o)
 

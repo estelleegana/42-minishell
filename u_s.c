@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   u_s.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 10:32:48 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/06 15:24:43 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/06 14:46:03 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/07 17:59:58 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int ac, char **av, char **env)
+t_initialestruct	*s(void)
 {
-	s()->ac = ac;
-	s()->av = av;
-	s()->env = env;
-	main_process();
+	static t_initialestruct	input;
+
+	return (&input);
 }
