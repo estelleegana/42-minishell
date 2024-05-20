@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_exec.c                                           :+:      :+:    :+:   */
+/*   e_exit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 17:23:45 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/19 19:13:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/07 16:23:46 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/19 18:43:04 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_exec(void)
+int	ft_exit(void)
 {
-	//if (execve(path, s()->p.tokens, s()->env) == -1)
-	//{
-	//	ft_putstr_fd("minishell: command not found: ", 2);
-	//	ft_putendl_fd(s()->p.tokens[0], 2);
-	//	ft_freelist(s()->p.tokens);
-	//	exit(127);
-	//}
+	if (ft_strcmp(s()->p.tokens[0], "exit") == 0)
+	{
+		printf("exit\n");
+		if (s()->p.ntokens == 1)
+			exit(0);
+	}
 	return 0;
 }

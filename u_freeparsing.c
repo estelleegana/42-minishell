@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aaa_minishell.c                                    :+:      :+:    :+:   */
+/*   u_freeparsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 14:46:44 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/07 17:59:34 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/19 19:31:26 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/20 15:35:14 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_minishell(void)
+int	ft_freeparsing(void)
 {
-	char	cmd[10];
-
-	while (1)
-	{
-		printf(PROMPT);
-		ft_parsing();
-		ft_exec();
-	}
+	free(s()->p.input);
+	//free(s()->p.ntokens);
+	ft_freetokens();
 	return (0);
 }

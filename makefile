@@ -3,39 +3,43 @@ NAME =  minishell
 
 #compiler ; compilateur, flag de debogue, flag d'exigence
 CC = gcc
-DFLAGS = -g3
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 #fichiers sources (categorie_nomdefonction) et objets
-SRCS = aaa_main.c \
-	aaa_s.c \
-	aaa_minishell.c \
+SRCS = 0_main.c \
+	0_minishell.c \
+	b_exit.c \
 	e_exec.c \
-	e_exit.c \
 	p_parsing.c \
+	p_history.c \
+	u_freeall.c \
+	u_freeexec.c \
+	u_freeparsing.c \
+	u_freetokens.c \
+	u_s.c \
 
 OBJS = $(SRCS:.c=.o)
 
 #include
-INCLUDELIBFT = libft/libft.a
+INCLUDES = libft/libft.a -lreadline
 
 #les fichiers obj prennent le nom des fichiers sources "*.c"
 %.o : %.c
-	$(CC) $(CFLAGS) $(DFLAG) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 ${NAME}: ${OBJS}
-	$(CC) $(CFLAGS) $(DFLAG) $(OBJS) -o $(NAME)
+	make -C libft/
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES)
 
 all : $(NAME)
 
 clean :
 	rm -rf $(OBJS)
+	@cd libft/ && $(MAKE) clean
 
 fclean : clean
 	rm -rf $(NAME)
-
-test : re
-	valgrind --tool=helgrind ./philo 5 200 20 20 3
+	@cd libft/ && $(MAKE) fclean
 
 norm:
 	norminette

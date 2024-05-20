@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_exec.c                                           :+:      :+:    :+:   */
+/*   u_freeexec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 17:23:45 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/19 19:13:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/19 19:31:59 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/19 19:37:15 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_exec(void)
+int	ft_freeexec(void)
 {
-	//if (execve(path, s()->p.tokens, s()->env) == -1)
-	//{
-	//	ft_putstr_fd("minishell: command not found: ", 2);
-	//	ft_putendl_fd(s()->p.tokens[0], 2);
-	//	ft_freelist(s()->p.tokens);
-	//	exit(127);
-	//}
-	return 0;
+	free(s()->e.cmdpath);
+	return (0);
 }
