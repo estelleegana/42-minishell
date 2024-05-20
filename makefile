@@ -10,8 +10,10 @@ SRCS = 0_main.c \
 	0_minishell.c \
 	b_exit.c \
 	e_exec.c \
-	p_parsing.c \
+	e_historyprint.c \
 	p_history.c \
+	p_historyinit.c \
+	p_parsing.c \
 	u_freeall.c \
 	u_freeexec.c \
 	u_freeparsing.c \

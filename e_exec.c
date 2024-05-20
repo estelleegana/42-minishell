@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:23:45 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/19 19:13:47 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/20 19:31:59 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int	ft_exec(void)
 	//	ft_freelist(s()->p.tokens);
 	//	exit(127);
 	//}
+	ft_exit();
+	ft_historyprint();
 	return 0;
 }

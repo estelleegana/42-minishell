@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p_parsing.c                                        :+:      :+:    :+:   */
+/*   p_historyinit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 17:21:38 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 19:12:20 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/20 17:59:22 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/20 18:02:35 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_parsing(void)
+int	ft_historyinit(void)
 {
-	int i;
-
-	ft_history();
-	s()->p.tokens = ft_split(s()->p.input, ' ');
-	i = 0;
-	while (s()->p.tokens[i])
-		i++;
-	s()->p.ntokens = i;
-	printf("p.input = %s\n", s()->p.input);
-	printf("p.ntokens = %d\n", s()->p.ntokens);
-	return 0;
+	s()->h.nb = 0;
+	s()->h.cmd = "rien";
+	return (0);
 }

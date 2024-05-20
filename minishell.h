@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 16:45:42 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/20 19:31:06 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ typedef struct s_parsing
 typedef struct s_exec
 {
 	char	*cmdpath;
+	char	*cmd;
 }				t_exec;
 
 typedef struct s_history
 {
 	char		*cmd;
-	unsigned int	i;
+	unsigned int	nb;
 	struct s_history	*next;
 
 }				t_history;
@@ -58,10 +59,13 @@ int	ft_exit(void);
 
 //e : EXECUTION (un genre de pipex)
 int	ft_exec(void);
+int	ft_historyprint(void);
 
 //p : PARSING
+int	ft_history(void);
 int	ft_parsing(void);
 int	ft_history(void);
+int	ft_historyinit(void);
 
 //u : UTILITAIRES
 t_initialestruct	*s(void);
