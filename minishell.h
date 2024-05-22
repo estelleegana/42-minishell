@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 19:31:06 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/22 20:35:19 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 
 # define PROMPT "minishell$ "
+# define MAX_HISTORY 100
+# define MAX_COMMAND_LENGTH 1000
 
 typedef struct s_parsing
 {
@@ -37,10 +39,8 @@ typedef struct s_exec
 
 typedef struct s_history
 {
-	char		*cmd;
-	unsigned int	nb;
-	struct s_history	*next;
-
+	char		cmds[MAX_HISTORY][MAX_COMMAND_LENGTH];
+	unsigned int	count;
 }				t_history;
 
 typedef struct s_initialestruct
@@ -60,6 +60,7 @@ int	ft_exit(void);
 //e : EXECUTION (un genre de pipex)
 int	ft_exec(void);
 int	ft_historyprint(void);
+int	ft_pipex(void);
 
 //p : PARSING
 int	ft_history(void);

@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:59:22 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 18:02:35 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/22 19:57:22 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_historyinit(void)
 {
-	s()->h.nb = 0;
-	s()->h.cmd = "rien";
+	s()->h.count = 0;
 	return (0);
 }

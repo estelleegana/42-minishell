@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:46:44 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 18:07:50 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/22 20:10:00 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_minishell(void)
 {
-	ft_historyinit();
+	//ft_historyinit();
 	while (1)
 	{
 		s()->p.input = readline(PROMPT);

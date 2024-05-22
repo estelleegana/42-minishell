@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:21:38 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 19:12:20 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/22 20:31:51 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_parsing(void)
 {
 	int i;
 
-	ft_history();
+	//ft_history();
+	//s()->h.count = 0;
 	s()->p.tokens = ft_split(s()->p.input, ' ');
 	i = 0;
 	while (s()->p.tokens[i])
