@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 14:28:16 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:40:19 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct s_initialestruct
 //0 : NOYAU (main, lancement de processus, etc.)
 int	ft_minishell(void);
 
-//b : BUILTINS (cd, echo (-n), pwd, export, unset, env, exit)
+//b : BUILTINS (cd, echo (-n), env, exit, export, pwd, unset)
 int	ft_builtins(void);
 int	ft_cd(void);
 int	ft_echo(void);
