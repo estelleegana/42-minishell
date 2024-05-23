@@ -12,6 +12,7 @@ SRCS = 0_main.c \
 	b_cd.c \
 	b_echo.c \
 	b_exit.c \
+	b_exitverify.c \
 	b_export.c \
 	b_pwd.c \
 	b_unset.c \

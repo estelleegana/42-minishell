@@ -11,6 +11,8 @@ SRCS = basics/ft_atoi.c \
 	basics/ft_isdigit.c \
 	basics/ft_isprint.c \
 	basics/ft_itoa.c \
+	basics/ft_llatoi.c \
+	basics/ft_lluatoi.c \
 	basics/ft_memchr.c \
 	basics/ft_memcmp.c \
 	basics/ft_memcpy.c \

@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:23:46 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 14:57:44 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:40:33 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ int	ft_exit(void)
 		exit(0);
 	else if (s()->p.ntokens == 2)
 	{
-
+		if (!ft_exitverify() && ft_isdigit(**s()->p.tokens))
+			exit(ft_llatoi(*(s()->p.tokens)) % 256);
+		else
+		{
+			printf("bash: exit: %s: numeric argument required\n", *s()->p.tokens);
+			exit(2);
+		}
 	}
 	else
 	{

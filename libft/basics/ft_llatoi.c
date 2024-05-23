@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeall.c                                        :+:      :+:    :+:   */
+/*   ft_llatoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:29:03 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 15:03:34 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/23 15:12:10 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/23 15:12:46 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-
-int	ft_freeall(void)
+long long int	ft_llatoi(const char *str)
 {
-	//free(s()->p.input);
-	ft_freeexec();
-	ft_freeparsing();
-	return (0);
+	int				sign;
+	long long int	res;
+
+	res = 0;
+	sign = 1;
+	if (!str || !*str)
+		return (0);
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	res = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		res *= 10;
+		res += *str - '0';
+		str++;
+	}
+	return (res * sign);
 }

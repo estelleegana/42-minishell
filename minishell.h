@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 14:40:19 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:42:32 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_exec
 	char	*cmd;
 	int		echo_n;
 	char	*cwd;
+	long long int		exit_i;
+	long long unsigned int		exit_iu;
 }				t_exec;
 
 //afficher un historique avec la cmd "history"
@@ -62,6 +64,7 @@ int	ft_builtins(void);
 int	ft_cd(void);
 int	ft_echo(void);
 int	ft_exit(void);
+int	ft_exitverify(void);
 int	ft_export(void);
 int	ft_pwd(void);
 int	ft_unset(void);
