@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:23:45 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/22 20:52:27 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:19:39 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	ft_exec(void)
 	char	*path;
 
 	path = cmdpath(s()->p.tokens[0], s()->env);
+	if (ft_builtins())
+		return (0);
 	if (execve(path, s()->p.tokens, s()->env) == -1)
 	{
 		ft_putstr_fd("minishell: command not found: ", 2);
@@ -76,7 +78,5 @@ int	ft_exec(void)
 		ft_freetokens();
 		//exit(127);
 	}
-	ft_exit();
-	ft_history();
 	return (0);
 }

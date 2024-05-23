@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_exit.c                                           :+:      :+:    :+:   */
+/*   b_cd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 16:23:46 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 11:57:11 by estegana         ###   ########.fr       */
+/*   Created: 2024/05/23 11:59:46 by estegana          #+#    #+#             */
+/*   Updated: 2024/05/23 12:00:04 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_exit(void)
+int	ft_cd(void)
 {
-	if (!ft_strcmp(s()->p.tokens[0], "exit"))
-	{
-		printf("exit\n");
-		if (s()->p.ntokens == 1)
-			exit(0);
-	}
-	return 0;
+	return (0);
 }

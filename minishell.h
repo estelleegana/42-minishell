@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/22 20:35:19 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:28:16 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ typedef struct s_exec
 {
 	char	*cmdpath;
 	char	*cmd;
+	int		echo_n;
+	char	*cwd;
 }				t_exec;
 
+//afficher un historique avec la cmd "history"
 typedef struct s_history
 {
 	char		cmds[MAX_HISTORY][MAX_COMMAND_LENGTH];
@@ -55,18 +58,19 @@ typedef struct s_initialestruct
 int	ft_minishell(void);
 
 //b : BUILTINS (cd, echo (-n), pwd, export, unset, env, exit)
+int	ft_builtins(void);
+int	ft_cd(void);
+int	ft_echo(void);
 int	ft_exit(void);
+int	ft_export(void);
+int	ft_pwd(void);
+int	ft_unset(void);
 
 //e : EXECUTION (un genre de pipex)
 int	ft_exec(void);
-int	ft_historyprint(void);
-int	ft_pipex(void);
 
 //p : PARSING
-int	ft_history(void);
 int	ft_parsing(void);
-int	ft_history(void);
-int	ft_historyinit(void);
 
 //u : UTILITAIRES
 t_initialestruct	*s(void);

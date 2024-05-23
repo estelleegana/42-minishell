@@ -8,11 +8,14 @@ CFLAGS = -Wall -Werror -Wextra -g3
 #fichiers sources (categorie_nomdefonction) et objets
 SRCS = 0_main.c \
 	0_minishell.c \
+	b_builtins.c \
+	b_cd.c \
+	b_echo.c \
 	b_exit.c \
+	b_export.c \
+	b_pwd.c \
+	b_unset.c \
 	e_exec.c \
-	e_historyprint.c \
-	p_history.c \
-	p_historyinit.c \
 	p_parsing.c \
 	u_freeall.c \
 	u_freeexec.c \
