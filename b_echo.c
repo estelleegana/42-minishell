@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:00:37 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 14:21:27 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:20:50 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,5 @@ int	ft_echo(void)
 	}
 	return (0);
 }
+
+//<echo -n echo bonjour> ne marche pas

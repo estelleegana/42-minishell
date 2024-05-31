@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 15:42:32 by estegana         ###   ########.fr       */
+/*   Updated: 2024/05/31 21:31:09 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@
 
 
 # define PROMPT "minishell$ "
+# define DELIM ""
 # define MAX_HISTORY 100
 # define MAX_COMMAND_LENGTH 1000
 
+//input = input initial brut
+//tokens = tokens regroupes par type
+//ex: "ls(commande) -l(arg1) /home/user"(arg2))
+//ex: "echo(commande) "hihi lol ok"(arg) |(operateur) grep(cmd2) ok(arg))
+//ntokens = nb total de tokens
 typedef struct s_parsing
 {
 	char		*input;
@@ -33,12 +39,12 @@ typedef struct s_parsing
 
 typedef struct s_exec
 {
-	char	*cmdpath;
-	char	*cmd;
-	int		echo_n;
-	char	*cwd;
-	long long int		exit_i;
-	long long unsigned int		exit_iu;
+	char					*cmdpath;
+	char					*cmd;
+	int						echo_n;
+	char					*cwd;
+	long long int			exit_i;
+	long long unsigned int	exit_iu;
 }				t_exec;
 
 //afficher un historique avec la cmd "history"
@@ -74,6 +80,7 @@ int	ft_exec(void);
 
 //p : PARSING
 int	ft_parsing(void);
+int	ft_tokenize(void);
 
 //u : UTILITAIRES
 t_initialestruct	*s(void);
