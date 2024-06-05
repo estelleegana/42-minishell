@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:21:38 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/31 20:26:57 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/05 18:49:59 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,5 @@ int	ft_parsing(void)
 	printf("p.ntokens = %d\n", s()->p.ntokens);
 	return 0;
 }
+
+//

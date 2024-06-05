@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/31 21:31:09 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:05:38 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,18 @@
 //ex: "ls(commande) -l(arg1) /home/user"(arg2))
 //ex: "echo(commande) "hihi lol ok"(arg) |(operateur) grep(cmd2) ok(arg))
 //ntokens = nb total de tokens
+//analyser les delimiteurs
+//expand = $USER > afficher la variable (avec '' et "")
+//nouvelle liste chainee de cmd (analyse validite)
+//compter nb de pipe |
+//a part les < >, tout sera des args
 typedef struct s_parsing
 {
 	char		*input;
 	char		**tokens;
-	int			ntokens;
+	unsigned int	ntokens;
+	unsigned int	ndq;
+	unsigned int	nsq;
 }				t_parsing;
 
 typedef struct s_exec
@@ -90,3 +97,6 @@ int	ft_freeparsing(void);
 int	ft_freetokens(void);
 
 #endif
+
+//"" impair > prompt dquote>
+//'' impair > prompt quote>
