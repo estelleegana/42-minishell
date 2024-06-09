@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/05 19:05:38 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:44:20 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ typedef struct s_parsing
 {
 	char		*input;
 	char		**tokens;
+	char		**tmptokens;
 	unsigned int	ntokens;
-	unsigned int	ndq;
-	unsigned int	nsq;
 }				t_parsing;
 
 typedef struct s_exec
@@ -73,13 +72,13 @@ typedef struct s_initialestruct
 int	ft_minishell(void);
 
 //b : BUILTINS (cd, echo (-n), env, exit, export, pwd, unset)
-int	ft_builtins(void);
+int	ft_builtins(void);//fait
 int	ft_cd(void);
-int	ft_echo(void);
-int	ft_exit(void);
-int	ft_exitverify(void);
+int	ft_echo(void);//fait
+int	ft_exit(void);//fait
+int	ft_exitverify(void);//fait
 int	ft_export(void);
-int	ft_pwd(void);
+int	ft_pwd(void);//fait
 int	ft_unset(void);
 
 //e : EXECUTION (un genre de pipex)
@@ -95,6 +94,7 @@ int	ft_freeall(void);
 int	ft_freeexec(void);
 int	ft_freeparsing(void);
 int	ft_freetokens(void);
+int	ft_unclosedquotes(void);
 
 #endif
 

@@ -3,7 +3,7 @@ NAME =  minishell
 
 #compiler ; compilateur, flag de debogue, flag d'exigence
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra -g3 -g
 
 #fichiers sources (categorie_nomdefonction) et objets
 SRCS = 0_main.c \

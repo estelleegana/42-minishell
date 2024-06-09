@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 20:27:10 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/05 19:12:37 by estegana         ###   ########.fr       */
+/*   Created: 2024/06/07 15:46:04 by estegana          #+#    #+#             */
+/*   Updated: 2024/06/09 20:45:16 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 int	ft_tokenize(void)
 {
-	static char *statictoken;
+	//unsigned int	i;
+	//unsigned int	j;
 
-	if (s()->p.input != NULL)
-		statictoken = s()->p.input;
-	if (statictoken == NULL)
-		return (-1);
-	s()->p.ndq = 0;
-	s()->p.nsq = 0;
-	while (*statictoken)
-	{
-		if (*statictoken == '"')
-		{
-			statictoken++;
-		}
-	}
-	printf("ndq = %d\n", s()->p.ndq);
-	printf("nsq = %d\n", s()->p.nsq);
+	//printf("------------ ENTREE DANS LE TOKENIZE ------------\n");
+	//i = 0;
+	//j = 0;
+	//while (*s()->p.input)
+	//{
+	//	if (*s()->p.input == '"')
+	//	{
+	//		s()->p.input++;
+	//		while (*s()->p.input != '"')
+	//		{
+	//			s()->p.tokens[i][j] = *s()->p.input;
+	//		}
+	//	}
+	//	else if
+	//		s()->p.tokens[i][j] = *s()->p.input;
+	//	s()->p.input++;
+	//}
 	return (0);
 }
-

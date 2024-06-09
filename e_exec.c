@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:23:45 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/26 17:18:15 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:49:51 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	ft_exec(void)
 {
 	char	*path;
 
+	printf("------------ ENTREE DANS L'EXEC ------------\n");
 	path = cmdpath(s()->p.tokens[0], s()->env);
 	if (ft_builtins())
 		return (0);
