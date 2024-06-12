@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:21:38 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/09 20:49:32 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:47:57 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 int	ft_parsing(void)
 {
-	int i;
-
-	ft_tokenize();
-	s()->p.tokens = ft_split(s()->p.input, ' ');
-	i = 0;
-	while (s()->p.tokens[i])
-		i++;
-	s()->p.ntokens = i;
+	printf("\n------------ ENTREE DANS LE PARSING ------------\n");
 	printf("p.input = %s\n", s()->p.input);
-	printf("p.ntokens = %d\n", s()->p.ntokens);
+	ft_tokenize();
+	ft_ntokens();
+	ft_npipes();
 	return 0;
 }

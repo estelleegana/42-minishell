@@ -17,6 +17,8 @@ SRCS = 0_main.c \
 	b_pwd.c \
 	b_unset.c \
 	e_exec.c \
+	p_npipes.c \
+	p_ntokens.c \
 	p_parsing.c \
 	p_tokenize.c \
 	u_freeall.c \

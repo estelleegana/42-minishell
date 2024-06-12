@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/09 20:44:20 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:14:11 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 
 # define PROMPT "minishell$ "
-# define DELIM ""
+# define DELIM "\""
 # define MAX_HISTORY 100
 # define MAX_COMMAND_LENGTH 1000
 
@@ -35,12 +35,14 @@
 //nouvelle liste chainee de cmd (analyse validite)
 //compter nb de pipe |
 //a part les < >, tout sera des args
+
 typedef struct s_parsing
 {
 	char		*input;
-	char		**tokens;
-	char		**tmptokens;
+	char	**tokens;
+	char	*token1;
 	unsigned int	ntokens;
+	unsigned int	npipes;
 }				t_parsing;
 
 typedef struct s_exec
@@ -85,6 +87,8 @@ int	ft_unset(void);
 int	ft_exec(void);
 
 //p : PARSING
+int	ft_npipes(void);
+int	ft_ntokens(void);
 int	ft_parsing(void);
 int	ft_tokenize(void);
 
@@ -94,7 +98,6 @@ int	ft_freeall(void);
 int	ft_freeexec(void);
 int	ft_freeparsing(void);
 int	ft_freetokens(void);
-int	ft_unclosedquotes(void);
 
 #endif
 
