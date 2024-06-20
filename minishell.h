@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/20 16:51:46 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/20 17:48:29 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int	ft_exec(void);
 int	ft_npipes(void);
 int	ft_ntokens(void);
 int	ft_parsing(void);
+char	*ft_substrtok(void);
 int	ft_strtok(void);
 
 //u : UTILITAIRES

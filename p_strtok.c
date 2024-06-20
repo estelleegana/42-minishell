@@ -6,46 +6,13 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:46:04 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/20 17:05:35 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/20 17:52:38 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-//int	ft_tokenize(void)
-//{
-//	int i;
-//	//int	j;
-//	char	**tmp;
-
-//	printf("------------ 1 tri des tokens ------------\n");
-//	//while (s()->p.input[i])
-//	//{
-//	//	if (s()->p.input[i] == '"')
-//	//	{
-//	//		i++;
-//	//		while (s()->p.input[i] != '"')
-//	//		{
-//	//			s()->p.token1[j] = s()->p.input[i];
-//	//			i++;
-//	//			j++;
-//	//		}
-//	//	}
-//	//	i++;
-//	//}
-//	//printf("token 1 = %s\n", s()->p.token1);
-//	s()->p.tokens = ft_split(s()->p.input, ' ');//si jamais ft_strtok marche pas
-//	tmp = s()->p.tokens;
-//	i = 0;
-//	while (tmp[i])
-//	{
-//		printf("token[%d] = %s\n", i, tmp[i]);
-//		i++;
-//	}
-//	return (0);
-//}
-
-int	ft_strtok(void)
+char	*ft_substrtok(void)
 {
 	static char	*staticinput;
 	char	*tokenstart;
@@ -56,7 +23,7 @@ int	ft_strtok(void)
 	if (s()->p.input != NULL)//si on a un input, staticinput = input
 		staticinput = s()->p.input;
 	if (staticinput == NULL)
-		return (0);//sinon on retourne NULL
+		return (NULL);//sinon on retourne NULL
 	printf("staticinput : %s\n", staticinput);
 	tokenstart = staticinput;
 	printf("tokenstart : %s\n", tokenstart);
@@ -65,7 +32,7 @@ int	ft_strtok(void)
 	if (*tokenstart == '\0')
 	{
 		staticinput = NULL;
-		return (0);
+		return (NULL);
 	}
 	tokenend = tokenstart;
 	printf("tokenend : %s\n", tokenend);
@@ -80,5 +47,20 @@ int	ft_strtok(void)
 		staticinput = NULL;
 	printf("tokenend 2 : %s\n", tokenend);
 	printf("staticinput : %s\n", staticinput);
+	return (tokenstart);
+}
+
+int	ft_strtok(void)
+{
+	int i;
+
+	i= 0;
+	s()->p.tokens[i] = ft_substrtok();
+	while (s()->p.tokens != NULL)
+	{
+		printf("token[%d]: %s\n", i, s()->p.tokens[i]);
+		i++;
+		s()->p.tokens[i] = ft_substrtok();
+	}
 	return (0);
 }
