@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/12 18:14:11 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:51:46 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_exec
 	char					*cwd;
 	long long int			exit_i;
 	long long unsigned int	exit_iu;
+
 }				t_exec;
 
 //afficher un historique avec la cmd "history"
@@ -90,7 +91,7 @@ int	ft_exec(void);
 int	ft_npipes(void);
 int	ft_ntokens(void);
 int	ft_parsing(void);
-int	ft_tokenize(void);
+int	ft_strtok(void);
 
 //u : UTILITAIRES
 t_initialestruct	*s(void);

@@ -20,7 +20,7 @@ SRCS = 0_main.c \
 	p_npipes.c \
 	p_ntokens.c \
 	p_parsing.c \
-	p_tokenize.c \
+	p_strtok.c \
 	u_freeall.c \
 	u_freeexec.c \
 	u_freeparsing.c \

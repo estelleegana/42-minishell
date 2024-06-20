@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:17:03 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/12 17:43:22 by estegana         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:53:06 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_ntokens(void)
 {
-	printf("------------ 2 comptage des tokens ------------\n");
+	printf("------------ comptage des tokens ------------\n");
 	unsigned int	i;
 
 	i = 0;
