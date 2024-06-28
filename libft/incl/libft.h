@@ -20,6 +20,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdarg.h>
 
 //basics
 int		ft_isalpha(int c);
