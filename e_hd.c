@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeexec.c                                       :+:      :+:    :+:   */
+/*   e_hd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:31:59 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:56:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/18 22:20:18 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/21 15:49:41 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeexec(void)
+int	ft_hd(void)
 {
-	free(s()->e.path);
+	printf("il y a un ou plusieurs heredoc\n");
 	return (0);
 }

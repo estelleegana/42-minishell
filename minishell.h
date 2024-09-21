@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/06/20 17:48:29 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:58:42 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 # define MINISHELL_H
 
 # include "libft/incl/libft.h"
+//printf
 # include <stdio.h>
+//malloc
 # include <stdlib.h>
+//pid_t
+# include <fcntl.h>
 # include <readline/readline.h>
 # include <readline/history.h>
+//waitpid
+#include <sys/types.h>
+#include <sys/wait.h>
 
 
 # define PROMPT "minishell$ "
@@ -40,35 +47,48 @@ typedef struct s_parsing
 {
 	char		*input;
 	char	**tokens;
-	char	*token1;
 	unsigned int	ntokens;
 	unsigned int	npipes;
 }				t_parsing;
 
+typedef struct s_command
+{
+	char	*cmd;
+	char **args;
+	pid_t pid;
+	struct s_command	*next;
+}				t_command;
+
+typedef struct s_heredoc
+{
+	char *limiter;
+	struct s_heredoc *next;
+}				t_heredoc;
+
 typedef struct s_exec
 {
-	char					*cmdpath;
-	char					*cmd;
-	int						echo_n;
-	char					*cwd;
-	long long int			exit_i;
+	char	*path;
+	t_command	*cmds;
+	int	hd;
+	int	pipes;
+	char *cwd;
+	pid_t	pid;
+	int	echo_n;
+	long long int	exit_i;
 	long long unsigned int	exit_iu;
-
+	//int						echo_n;
+	//char					*cwd;
+	//long long int			exit_i;
+	//long long unsigned int	exit_iu;
 }				t_exec;
-
-//afficher un historique avec la cmd "history"
-typedef struct s_history
-{
-	char		cmds[MAX_HISTORY][MAX_COMMAND_LENGTH];
-	unsigned int	count;
-}				t_history;
 
 typedef struct s_initialestruct
 {
+	int			ac;
+	char		**av;
 	char		**env;
 	t_exec		e;
 	t_parsing	p;
-	t_history	h;
 }				t_initialestruct;
 
 //0 : NOYAU (main, lancement de processus, etc.)
@@ -85,7 +105,16 @@ int	ft_pwd(void);//fait
 int	ft_unset(void);
 
 //e : EXECUTION (un genre de pipex)
+int	ft_child(void);
+char	*printvariableenv(char *name, char **env);
+char	*cmdpath(char *cmd);
 int	ft_exec(void);
+int	ft_execute(void);
+int	ft_hd(void);
+int	ft_initialize_exec(void);
+int	ft_is_hd(void);
+int	ft_loop(void);
+int	ft_parent(void);
 
 //p : PARSING
 int	ft_npipes(void);

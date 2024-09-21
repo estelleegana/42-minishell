@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeexec.c                                       :+:      :+:    :+:   */
+/*   e_parent.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:31:59 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:56:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/18 21:51:17 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/21 15:50:01 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeexec(void)
+int	ft_parent(void)
 {
-	free(s()->e.path);
+	int status;
+	pid_t childpid;
+
+	printf("*********entree parent***********\n");
+	childpid = waitpid(s()->e.pid, & status, 0);
+	if (childpid == -1)
+		return (printf("waitpid failed\n"), 1);
 	return (0);
 }

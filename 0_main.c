@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:32:48 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/15 17:09:18 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:46:28 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 int	main(int ac, char **av, char **env)
 {
-	(void)av;
+	s()->ac = ac;
+	s()->av = av;
 	s()->env = env;
 	if (ac != 1)
 		return(printf("No args needed\n"), 1);
-	ft_minishell();
+	while (1)
+		ft_minishell();
 }

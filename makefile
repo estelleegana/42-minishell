@@ -16,7 +16,15 @@ SRCS = 0_main.c \
 	b_export.c \
 	b_pwd.c \
 	b_unset.c \
+	e_child.c \
+	e_cmdpath.c \
 	e_exec.c \
+	e_execute.c \
+	e_hd.c \
+	e_initialize_exec.c \
+	e_is_hd.c \
+	e_loop.c \
+	e_parent.c \
 	p_npipes.c \
 	p_ntokens.c \
 	p_parsing.c \
@@ -39,6 +47,9 @@ INCLUDES = libft/libft.a -lreadline
 ${NAME}: ${OBJS}
 	make -C libft/
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES)
+
+bev :
+	gcc -Wall -Wextra -Werror -g3 *.c $(INCLUDES) -o bev
 
 all : $(NAME)
 

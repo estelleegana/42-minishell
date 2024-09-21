@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeexec.c                                       :+:      :+:    :+:   */
+/*   e_initialize_exec.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:31:59 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:56:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/18 22:06:06 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/21 15:49:47 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeexec(void)
+int	ft_initialize_exec(void)
 {
-	free(s()->e.path);
+	s()->e.path = NULL;
+	s()->e.hd = -1;
 	return (0);
 }
