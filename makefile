@@ -28,7 +28,6 @@ SRCS = 0_main.c \
 	p_npipes.c \
 	p_ntokens.c \
 	p_parsing.c \
-	p_strtok.c \
 	u_freeall.c \
 	u_freeexec.c \
 	u_freeparsing.c \
@@ -47,9 +46,6 @@ INCLUDES = libft/libft.a -lreadline
 ${NAME}: ${OBJS}
 	make -C libft/
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES)
-
-bev :
-	gcc -Wall -Wextra -Werror -g3 *.c $(INCLUDES) -o bev
 
 all : $(NAME)
 

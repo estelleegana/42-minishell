@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:58:42 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:07:10 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,16 @@ typedef struct s_heredoc
 
 typedef struct s_exec
 {
-	char	*path;
-	t_command	*cmds;
-	int	hd;
-	int	pipes;
-	char *cwd;
-	pid_t	pid;
-	int	echo_n;
-	long long int	exit_i;
+	char					*path;
+	t_command				*cmds;
+	int						ncmds;
+	int						hd;
+	int						pipes;
+	pid_t					pid;
+	int						echo_n;
+	char					*cwd;
+	long long int			exit_i;
 	long long unsigned int	exit_iu;
-	//int						echo_n;
-	//char					*cwd;
-	//long long int			exit_i;
-	//long long unsigned int	exit_iu;
 }				t_exec;
 
 typedef struct s_initialestruct
@@ -120,8 +117,6 @@ int	ft_parent(void);
 int	ft_npipes(void);
 int	ft_ntokens(void);
 int	ft_parsing(void);
-char	*ft_substrtok(void);
-int	ft_strtok(void);
 
 //u : UTILITAIRES
 t_initialestruct	*s(void);
