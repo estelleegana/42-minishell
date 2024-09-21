@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:07:10 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/21 19:02:32 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@
 
 typedef struct s_parsing
 {
-	char		*input;
-	char	**tokens;
+	char			*input;
+	char			**tokens;
 	unsigned int	ntokens;
 	unsigned int	npipes;
+	unsigned int	nhd;
 }				t_parsing;
 
 typedef struct s_command
@@ -58,12 +59,6 @@ typedef struct s_command
 	pid_t pid;
 	struct s_command	*next;
 }				t_command;
-
-typedef struct s_heredoc
-{
-	char *limiter;
-	struct s_heredoc *next;
-}				t_heredoc;
 
 typedef struct s_exec
 {
@@ -77,6 +72,7 @@ typedef struct s_exec
 	char					*cwd;
 	long long int			exit_i;
 	long long unsigned int	exit_iu;
+	char					**limiters;
 }				t_exec;
 
 typedef struct s_initialestruct
@@ -107,13 +103,17 @@ char	*printvariableenv(char *name, char **env);
 char	*cmdpath(char *cmd);
 int	ft_exec(void);
 int	ft_execute(void);
-int	ft_hd(void);
 int	ft_initialize_exec(void);
-int	ft_is_hd(void);
 int	ft_loop(void);
 int	ft_parent(void);
 
+//hd : HEREDOC
+int	ft_hd(void);
+int	ft_is_hd(void);
+int	ft_limiters(void);
+
 //p : PARSING
+int	ft_nhd(void);
 int	ft_npipes(void);
 int	ft_ntokens(void);
 int	ft_parsing(void);

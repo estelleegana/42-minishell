@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:49:06 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:49:06 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:39:02 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_child(void)
 {
-	printf("*********entree child***********\n");
+	printf("*** entree child ***\n");
 	ft_execute();
 	return (0);
 }

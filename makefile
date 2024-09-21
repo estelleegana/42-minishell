@@ -20,11 +20,13 @@ SRCS = 0_main.c \
 	e_cmdpath.c \
 	e_exec.c \
 	e_execute.c \
-	e_hd.c \
 	e_initialize_exec.c \
-	e_is_hd.c \
 	e_loop.c \
 	e_parent.c \
+	hd_hd.c \
+	hd_is_hd.c \
+	hd_limiters.c \
+	p_nhd.c \
 	p_npipes.c \
 	p_ntokens.c \
 	p_parsing.c \
