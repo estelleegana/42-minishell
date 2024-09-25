@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 19:02:32 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:30:01 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@
 
 # define PROMPT "minishell$ "
 # define DELIM "\""
-# define MAX_HISTORY 100
-# define MAX_COMMAND_LENGTH 1000
+# define CMD 100
+# define ARG 200
+# define OP 300
 
 //input = input initial brut
 //tokens = tokens regroupes par type
@@ -50,24 +51,22 @@ typedef struct s_parsing
 	unsigned int	ntokens;
 	unsigned int	npipes;
 	unsigned int	nhd;
+	unsigned int	nredir;
 }				t_parsing;
-
-typedef struct s_command
-{
-	char	*cmd;
-	char **args;
-	pid_t pid;
-	struct s_command	*next;
-}				t_command;
 
 typedef struct s_exec
 {
-	char					*path;
-	t_command				*cmds;
-	int						ncmds;
-	int						hd;
-	int						pipes;
-	pid_t					pid;
+	char			*cmd;
+	char			*path;
+	pid_t			pid;
+	char			**args;
+	char			**env;
+	int				pipes;
+	int				fd[2];
+	int				infile;
+	int				outfile;
+	int				append_out;
+	struct s_exec	*next;
 	int						echo_n;
 	char					*cwd;
 	long long int			exit_i;
@@ -101,31 +100,51 @@ int	ft_unset(void);
 int	ft_child(void);
 char	*printvariableenv(char *name, char **env);
 char	*cmdpath(char *cmd);
+int	ft_error(void);
 int	ft_exec(void);
 int	ft_execute(void);
 int	ft_initialize_exec(void);
 int	ft_loop(void);
+int	open_file(char *file, int inout);
 int	ft_parent(void);
 
 //hd : HEREDOC
 int	ft_hd(void);
 int	ft_is_hd(void);
-int	ft_limiters(void);
+//int	ft_limiters(void);
 
 //p : PARSING
 int	ft_nhd(void);
 int	ft_npipes(void);
+int	ft_nredir(void);
 int	ft_ntokens(void);
 int	ft_parsing(void);
 
 //u : UTILITAIRES
+void	ft_freelist(char **list);
 t_initialestruct	*s(void);
-int	ft_freeall(void);
-int	ft_freeexec(void);
-int	ft_freeparsing(void);
-int	ft_freetokens(void);
 
 #endif
 
-//"" impair > prompt dquote>
-//'' impair > prompt quote>
+
+//prendre en compte que la derniere redirection
+
+//ecarter les cas d'erreur suivants :
+//$ | ls (pas de commande avant une |)
+//minishell: syntax error near unexpected token '|'
+
+//$ < i (pas de fichier ac un nom valide apres une redir d'input)
+//bash: i: No such file or directory
+
+//$ <<
+//bash: syntax error near unexpected token 'newline{commande qui suit}'
+
+//$ < (rien apres une redir)
+//bash: syntax error near unexpected token `newline{cmd qui suit}'
+
+
+
+//gerer 1 pipe
+//plusieurs
+//gerer les redirections < puis > puis >>
+//cas d'enchainements

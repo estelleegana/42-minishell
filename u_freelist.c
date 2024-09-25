@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeall.c                                        :+:      :+:    :+:   */
+/*   u_freelist.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:29:03 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 15:03:34 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/24 19:51:35 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/24 19:51:46 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeall(void)
+void	ft_freelist(char **list)
 {
-	//free(s()->p.input);
-	ft_freeexec();
-	ft_freeparsing();
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (list[i])
+	{
+		free(list[i]);
+		i++;
+	}
+	free(list);
 }

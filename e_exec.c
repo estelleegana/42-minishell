@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 17:08:00 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:40:51 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:16:10 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_exec(void)
 {
 	printf("\n----------------- EXECUTION -----------------\n");
-	if (ft_builtins())
-		return (0);
+	if (ft_is_hd())
+		ft_hd();
 	else
 	{
 		if (ft_loop())

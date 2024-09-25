@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freetokens.c                                     :+:      :+:    :+:   */
+/*   e_openfile.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 18:47:54 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/20 15:34:33 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/23 20:03:09 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/23 20:15:33 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freetokens(void)
+int	open_file(char *file, int inout)
 {
-	size_t	i;
+	int	ret;
 
-	i = 0;
-	while (s()->p.tokens[i])
-	{
-		free(s()->p.tokens[i]);
-		i++;
-	}
-	return (0);
+	if (inout == 0)
+		ret = open(file, O_RDONLY, 0777);
+	if (inout == 1)
+		ret = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0777);
+	if (ret == -1)
+		return (printf("__ERROR_FILE__:\nCan't read outfile or infile.\n"), 0);
+	return (ret);
 }

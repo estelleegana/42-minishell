@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeexec.c                                       :+:      :+:    :+:   */
+/*   e_error.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:31:59 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:56:47 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/24 20:26:55 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/24 20:33:53 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeexec(void)
+int	ft_error(void)
 {
-	free(s()->e.path);
+	unsigned int	i;
+
+	i = 0;
+	while (s()->p.tokens[i])
+	{
+		if (!ft_strcmp(s()->p.tokens[i], "|"))
+		{
+			if (!)
+		}
+		i++;
+	}
 	return (0);
 }

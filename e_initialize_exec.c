@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:06:06 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:49:47 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:53:55 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 int	ft_initialize_exec(void)
 {
 	s()->e.path = NULL;
-	s()->e.hd = -1;
 	return (0);
 }

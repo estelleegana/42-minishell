@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 20:58:46 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 15:49:23 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:59:42 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ char	*cmdpath(char *cmd)
 		free(path_part);
 		if (access(exec, F_OK | X_OK) == 0)
 		{
-			//ft_freelist(split_cmd);
+			ft_freelist(split_cmd);
 			return (exec);
 		}
 		free(exec);
 	}
-	//ft_freelist(allpath);
-	//ft_freetokens();
+	ft_freelist(allpath);
+	ft_freelist(split_cmd);
 	return (cmd);
 }

@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:46:44 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:54:36 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:03:20 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_minishell(void)
 	printf("\np.input = %s\n", s()->p.input);
 	ft_parsing();
 	ft_exec();
-	free(s()->p.input);
 	return (0);
 }
 

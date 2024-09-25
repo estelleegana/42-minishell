@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_freeparsing.c                                    :+:      :+:    :+:   */
+/*   p_nredir.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 19:31:26 by estegana          #+#    #+#             */
-/*   Updated: 2024/05/23 15:03:29 by estegana         ###   ########.fr       */
+/*   Created: 2024/09/24 20:07:33 by estegana          #+#    #+#             */
+/*   Updated: 2024/09/24 20:13:56 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_freeparsing(void)
+int	ft_nredir(void)
 {
-	free(s()->p.input);
-	//free(s()->p.ntokens);
-	ft_freetokens();
+	unsigned int	i;
+	unsigned int	count;
+
+	printf("*** combien de redir? ***\n");
+	i = 0;
+	count = 0;
+	while (s()->p.tokens[i])
+	{
+		if (!ft_strcmp(s()->p.tokens[i], "<") || !ft_strcmp(s()->p.tokens[i], ">"))
+			count++;
+		i++;
+	}
+	s()->p.nredir = count;
+	printf("p.nredir = %d\n", s()->p.nredir);
 	return (0);
 }
