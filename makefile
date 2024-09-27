@@ -18,7 +18,6 @@ SRCS = 0_main.c \
 	b_unset.c \
 	e_child.c \
 	e_cmdpath.c \
-	e_error.c \
 	e_exec.c \
 	e_execute.c \
 	e_initialize_exec.c \

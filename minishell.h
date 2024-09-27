@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/24 20:30:01 by estegana         ###   ########.fr       */
+/*   Updated: 2024/09/27 21:12:10 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int	ft_unset(void);
 int	ft_child(void);
 char	*printvariableenv(char *name, char **env);
 char	*cmdpath(char *cmd);
-int	ft_error(void);
 int	ft_exec(void);
 int	ft_execute(void);
 int	ft_initialize_exec(void);
@@ -143,8 +142,25 @@ t_initialestruct	*s(void);
 //bash: syntax error near unexpected token `newline{cmd qui suit}'
 
 
-
 //gerer 1 pipe
 //plusieurs
 //gerer les redirections < puis > puis >>
 //cas d'enchainements
+
+//ordre de priorite d'execution :
+
+//1		NON GERE Parenthèses () et subshells
+//2		NON GERE Substitution de commande $(...) ou `...`
+//3		NON GERE Substitution arithmétique $((...))
+//4		Substitution de variables $variable
+//5		Redirections <, >, 2>, etc.
+//6		NON GERE Expansion des accolades {...}
+//7		*: BONUS Expansion de motifs *, ?, etc.
+//8		NON GERE Expansion des tilde ~
+//9		Pipelines |
+//			> tester "ls | grep e_"
+//10	BONUS Opérateurs logiques &&, ||
+//11	NON GERE Séparateurs ;, &
+//12	NON GERE Groupes de commandes {} et ()
+//13	NON GERE Fonctions et alias
+//14	builtins
