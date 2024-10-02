@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:52:27 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:17:13 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:35:16 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_pipe(t_list *list)
 		ft_child(list);
 	else
 		ft_parent(list);
-	close(list->fd[0]);
-	close(list->fd[1]);
+	//close(list->fd[0]);
+	//close(list->fd[1]);
+	//list = list->next;
 	return (0);
 }

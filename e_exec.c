@@ -6,19 +6,15 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 17:08:00 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:29:24 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:45:10 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_exec(void)
+int	ft_exec(t_list *list)
 {
-	t_list	*list;
-
 	printf("\n\033[1m----------------- EXECUTION -----------------\033[0m\n");
-	list = createlist();
-	printlist(list);
 	while (list)
 	{
 		if (ft_is_hd())

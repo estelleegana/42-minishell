@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:51:35 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 19:05:51 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:46:35 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ t_list	*createcmd(char	*commande)
 	new->cmd = commande;
 	new->path = NULL;
 	new->args = NULL;
+	new->env = NULL;
 	new->pipes = 0;
+	new->output_fd = -1;
+	new->input_fd = -1;
 	new->next = NULL;
-	//new->output_fd = -1;
-	//new->input_fd = -1;
-	//new->env = NULL;
 	//if (pipe(new->pipe_fds) < 0)
 	//{
 	//	printf(RED "[error while creating a cmd pipe]\n" RESET);

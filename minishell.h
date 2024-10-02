@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:34:52 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:55:12 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ typedef struct s_list
 	char			**env;
 	int				pipes;
 	int				fd[2];
-	int				infile;//<
-	int				outfile;//>
-	int				append_out;//
+	int				input_fd;//<
+	int				output_fd;//>
+	int				append_out;//>>
 	struct s_list	*next;
 }				t_list;
 
@@ -118,7 +118,7 @@ int	ft_unset(void);
 int	ft_child(t_list *list);
 char	*printvariableenv(char *name, char **env);
 char	*cmdpath(char *cmd);
-int	ft_exec(void);
+int	ft_exec(t_list *list);
 int	ft_execute(t_list *list);
 int	ft_loop(t_list *list);
 int	open_file(char *file, int inout);

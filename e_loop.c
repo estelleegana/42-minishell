@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 20:19:28 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:14:58 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:43:53 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@
 
 int	ft_loop(t_list *list)
 {
-	printf("*** entree boucle ***\n");
 	if (ft_builtins(list))
 		return (0);
-	else if (list->pipes > 0)
-		ft_pipe(list);
 	else
 	{
 		list->pid = fork();
