@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 17:08:00 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/23 20:16:10 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:29:24 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int	ft_exec(void)
 {
-	printf("\n----------------- EXECUTION -----------------\n");
-	if (ft_is_hd())
-		ft_hd();
-	else
+	t_list	*list;
+
+	printf("\n\033[1m----------------- EXECUTION -----------------\033[0m\n");
+	list = createlist();
+	printlist(list);
+	while (list)
 	{
-		if (ft_loop())
-			return (0);
+		if (ft_is_hd())
+		{
+			ft_hd();
+			ft_loop(list);
+		}
+		else
+			ft_loop(list);
+		list = list->next;
 	}
 	return (0);
 }

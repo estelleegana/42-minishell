@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_initialize_exec.c                                :+:      :+:    :+:   */
+/*   e_pipe.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 22:06:06 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/27 22:05:30 by estegana         ###   ########.fr       */
+/*   Created: 2024/10/01 17:52:27 by estegana          #+#    #+#             */
+/*   Updated: 2024/10/02 21:17:13 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_initialize_exec(void)
+int	ft_pipe(t_list *list)
 {
-	//s()->e.cmd = s()->p.tokens[0];
-	//printf("e.cmd1 : %s\n", s()->e.cmd);
-	//s()->e.args[0] = s()->p.tokens[1];
-	//s()->e = s()->e->next ;
-	//s()->e.cmd = s()->p.tokens[2];
-	//s()->e.args[0] = s()->p.tokens[3];
-	//printf("e.cmd2 : %s\n", s()->e.cmd);
-	//printf("e.args1 : %s\n", s()->e.args[0]);
+	if (pipe(list->fd) == -1)
+		printf("pipe error\n");
+	list->pid = fork();
+	if (list->pid == -1)
+		return (0);
+	else if (list->pid == 0)
+		ft_child(list);
+	else
+		ft_parent(list);
+	close(list->fd[0]);
+	close(list->fd[1]);
 	return (0);
 }

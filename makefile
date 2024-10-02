@@ -20,10 +20,10 @@ SRCS = 0_main.c \
 	e_cmdpath.c \
 	e_exec.c \
 	e_execute.c \
-	e_initialize_exec.c \
 	e_loop.c \
 	e_openfile.c \
 	e_parent.c \
+	e_pipe.c \
 	hd_hd.c \
 	hd_is_hd.c \
 	hd_limiters.c \
@@ -32,8 +32,8 @@ SRCS = 0_main.c \
 	p_nredir.c \
 	p_ntokens.c \
 	p_parsing.c \
-	u_freelist.c \
-	u_s.c \
+	u_list.c \
+	u_statique.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -49,6 +49,12 @@ ${NAME}: ${OBJS}
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES)
 
 all : $(NAME)
+
+list :
+	gcc p_sam.c $(INCLUDES) -o list
+
+relist :
+	rm -rf list && make list
 
 clean :
 	rm -rf $(OBJS)

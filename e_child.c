@@ -6,23 +6,22 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:49:06 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/23 20:12:46 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:20:30 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_child(void)
+int	ft_child(t_list *list)
 {
-	//int infile;
-	printf("*** entree child ***\n");
-	//if (redirection existe)
-	//{
-	//	infile = open_file(av[1], 0);
-	//	dup2(infile, 0);
-	//	dup2(tube[1], 1);
-	//	close(tube[0]);
-	//}
-	ft_execute();
+
+	if (list->pipes > 0)
+	{
+		printf("*** entree child AVEC PIPE ***\n");
+		dup2(list->fd[1], 1);
+		close(list->fd[0]);
+	}
+	printf("*** entree child SANS PIPE ***\n");
+	ft_execute(list);
 	return (0);
 }
