@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:17:03 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:37:57 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:38:25 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_ntokens(void)
 	j =0;
 	while (s()->p.tokens[j])
 	{
-		printf("token[%d] : %s\n", j, s()->p.tokens[j]);
+		printf("\ttoken[%d]: %s\n", j, s()->p.tokens[j]);
 		j++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:55:12 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:32:51 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,8 @@ t_list	*createcmd(char	*commande);
 void	addback(t_list **a, t_list *new);
 t_list	*createlist(void);
 void	printlist(t_list *list);
-void	ft_freelist(char **list);
+void	ft_freetab(char **tab);
+void	ft_freelist(t_list **a);
 t_initialestruct	*s(void);
 
 #endif

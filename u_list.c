@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:51:35 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/02 21:46:35 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:34:05 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ t_list	*createcmd(char	*commande)
 	new->output_fd = -1;
 	new->input_fd = -1;
 	new->next = NULL;
-	//if (pipe(new->pipe_fds) < 0)
-	//{
-	//	printf(RED "[error while creating a cmd pipe]\n" RESET);
-	//	return (NULL);
-	//}
+	if (pipe(new->fd) < 0)
+	{
+		printf("[error while creating a cmd pipe]\n");
+		return (NULL);
+	}
 	return (new);
 }
 
@@ -93,21 +93,43 @@ void	printlist(t_list *list)
 
 	while (tmp)
 	{
-		printf("cmd : %s\n", tmp->cmd);
+		printf("cmd : %s, ", tmp->cmd);
 		printf("pipe? : %i\n", tmp->pipes);
 		tmp = tmp->next;
 	}
 }
 
-void	ft_freelist(char **list)
+void	ft_freetab(char **tab)
 {
 	size_t	i;
 
 	i = 0;
-	while (list[i])
+	while (tab[i])
 	{
-		free(list[i]);
+		free(tab[i]);
 		i++;
 	}
-	free(list);
+	free(tab);
+}
+
+void	ft_freelist(t_list **list)
+{
+	t_list	*tmp;
+
+	if (!list)
+		return ;
+	while (*list)
+	{
+		tmp = (*list)->next;
+		(*list)->cmd = NULL;
+		(*list)->path = NULL;
+		(*list)->args = NULL;
+		(*list)->env = NULL;
+		(*list)->pipes = 0;
+		(*list)->output_fd = -1;
+		(*list)->input_fd = -1;
+		(*list)->next = NULL;
+		free(*list);
+		*list = tmp;
+	}
 }
