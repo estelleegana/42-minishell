@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:17:03 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/04 15:38:25 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:18:07 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_ntokens(void)
 	unsigned int	i;
 	unsigned int	j;
 
-	printf("*** combien de tokens? ***\n");
 	i = 0;
 	while (s()->p.tokens[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:48:18 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:35:57 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:17:54 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_npipes(void)
 	unsigned int	i;
 	unsigned int	count;
 
-	printf("*** combien de pipes? ***\n");
 	i = 0;
 	count = 0;
 	while (s()->p.input[i])

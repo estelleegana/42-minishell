@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:51:35 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/04 15:34:05 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:12:17 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,11 @@ t_list	*createlist(void)
 			if (!ft_strcmp(s()->p.tokens[i], "|"))
 			{
 				to_build->pipes++;
-				//to_build = to_build->next;
+				i++;
+			}
+			if (!ft_strcmp(s()->p.tokens[i], "<"))
+			{
+				to_build->input_fd = open_file(s()->p.tokens[++i], 0);
 				i++;
 			}
 			else
@@ -94,7 +98,8 @@ void	printlist(t_list *list)
 	while (tmp)
 	{
 		printf("cmd : %s, ", tmp->cmd);
-		printf("pipe? : %i\n", tmp->pipes);
+		printf("pipe : %i, ", tmp->pipes);
+		printf("infile : %i\n", tmp->input_fd);
 		tmp = tmp->next;
 	}
 }

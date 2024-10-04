@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:09:11 by estegana          #+#    #+#             */
-/*   Updated: 2024/10/04 15:32:51 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:03:33 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,10 @@
 # define RESET "\e[0m"
 # define BOLD "\e[1m"
 # define PROMPT "minishell$ "
-# define DELIM "\""
-# define CMD 100
-# define ARG 200
-# define OP 300
-
-//input = input initial brut
-//tokens = tokens regroupes par type
-//ex: "ls(commande) -l(arg1) /home/user"(arg2))
-//ex: "echo(commande) "hihi lol ok"(arg) |(operateur) grep(cmd2) ok(arg))
-//ntokens = nb total de tokens
-//analyser les delimiteurs
-//expand = $USER > afficher la variable (avec '' et "")
-//nouvelle liste chainee de cmd (analyse validite)
-//compter nb de pipe |
-//a part les < >, tout sera des args
 
 typedef struct s_list
 {
+	unsigned int	i;//index
 	char			*cmd;
 	char			*path;
 	pid_t			pid;
@@ -70,6 +56,8 @@ typedef struct s_parsing
 	unsigned int	npipes;
 	unsigned int	nhd;
 	unsigned int	nredir;
+	unsigned int	i_lastinput;
+	unsigned int	i_lastoutput;
 }				t_parsing;
 
 typedef struct s_exec

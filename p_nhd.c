@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:24:58 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/21 18:35:35 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:17:50 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_nhd(void)
 	unsigned int	i;
 	unsigned int	count;
 
-	printf("*** combien de heredoc? ***\n");
 	i = 0;
 	count = 0;
 	while (s()->p.tokens[i])

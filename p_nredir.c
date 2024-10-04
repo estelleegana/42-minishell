@@ -6,7 +6,7 @@
 /*   By: estegana <estegana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:07:33 by estegana          #+#    #+#             */
-/*   Updated: 2024/09/24 20:13:56 by estegana         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:17:58 by estegana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_nredir(void)
 	unsigned int	i;
 	unsigned int	count;
 
-	printf("*** combien de redir? ***\n");
 	i = 0;
 	count = 0;
 	while (s()->p.tokens[i])
